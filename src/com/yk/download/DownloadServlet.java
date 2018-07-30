@@ -10,9 +10,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.sound.sampled.AudioFormat.Encoding;
 
-import com.sun.xml.internal.fastinfoset.Encoder;
 
 @WebServlet("/down")
 public class DownloadServlet extends HttpServlet {
@@ -26,7 +24,6 @@ public class DownloadServlet extends HttpServlet {
 		
 		String filename = req.getParameter("filename");
 		
-		System.out.println(filename.trim());
 		
 		if(filename != null && !"".equals(filename.trim()))
 		{
@@ -37,9 +34,7 @@ public class DownloadServlet extends HttpServlet {
 		
 		//设置响应头(弹框询问)
 		resp.setContentType("application/x-msdownload");
-		
 		String useragent = req.getHeader("User-Agent");
-		
 		if(useragent.contains("MSIE"))
 		{
 			filename = URLEncoder.encode(filename, "utf-8");
