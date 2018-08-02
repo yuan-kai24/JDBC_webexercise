@@ -44,4 +44,13 @@
 		<filter-name>CharacterEncodingFilter</filter-name>
 		<url-pattern>/*</url-pattern>
 	</filter-mapping>
+	
+	<filter>
+		<filter-name>LofinFilter</filter-name>
+		<filter-class>com.yk.TestFilter.LoginFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>LofinFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
 </web-app>

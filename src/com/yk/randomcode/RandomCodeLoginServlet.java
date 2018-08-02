@@ -16,6 +16,7 @@ public class RandomCodeLoginServlet extends HttpServlet {
 	protected void service(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
 		
+		
 		String username = req.getParameter("username");
 		String password = req.getParameter("password");
 		String usercode = req.getParameter("randomcode");
@@ -27,9 +28,8 @@ public class RandomCodeLoginServlet extends HttpServlet {
 		}
 		String randomcode = req.getSession().getAttribute("randomcode").toString();
 		
-		System.out.println(username + "\r\n" + password + "\r\n" + usercode + "\r\n" + randomcode);		
 		if(usercode != null && randomcode.equals(usercode)){
-			System.out.println(username + "\r\n" + password + "\r\n" + usercode + "\r\n" + randomcode);
+			System.out.println("用户名:"+username + "\r\n" + "密码:" + password + "\r\n" + usercode + "\r\n" + randomcode);
 		}
 		else
 		{
